@@ -2,6 +2,7 @@ package Model;
 
 import javax.security.auth.login.AccountExpiredException;
 import java.util.ArrayList;
+import java.util.Objects;
 
 public class media {
     private String fechaCreacion;
@@ -11,15 +12,14 @@ public class media {
      * constructor para "media"
      *
      * @param fechaCreacion
-     * @param nombreAutor
      * @author David Huertas
      * @since 8/11/2022
      */
 
 
-    public media(String fechaCreacion, ArrayList<String> nombreAutor, ArrayList<String> archivos) {
+    public media(String fechaCreacion) {
         this.fechaCreacion = fechaCreacion;
-        this.nombreAutor = nombreAutor;
+        ArrayList<String> nombreAutor = new ArrayList<>();
     }
 
     /**
@@ -43,21 +43,16 @@ public class media {
     /**
      * getter para nombreAutor
      * @author David Huertas
-     * @since 8/11/2022
      */
-    public String getnombreAutor() {
+    public ArrayList<String> getnombreAutor() {
         return nombreAutor;
     }
 
     /**
      * setter para nombreAutor
      * @author David Huertas
-     * @since 8/11/2022
      */
-    public void setnombreAutor(String nombreAutor) {
-        this.nombreAutor = nombreAutor;
-    }
-
+    public void setnombreAutor(ArrayList<String> nombreAutor) {this.nombreAutor = nombreAutor;}
 
     @Override
     public String toString() {
@@ -65,5 +60,12 @@ public class media {
                 "fechaCreacion='" + fechaCreacion + '\'' +
                 ", nombreAutor='" + nombreAutor + '\'' +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof media media)) return false;
+        return Objects.equals(getFechaCreacion(), media.getFechaCreacion()) && Objects.equals(nombreAutor, media.nombreAutor);
     }
 }

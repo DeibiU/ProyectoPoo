@@ -1,6 +1,7 @@
 package Model;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 public class proyecto {
 
@@ -21,8 +22,6 @@ public class proyecto {
         this.fechaCreacion = fechaCreacion;
         this.ultimaModificacion = ultimaModificacion;
         this.repositorio = repositorio;
-        this.investigaciones = investigaciones;
-        this.medias = medias;
     }
 
     /**
@@ -133,40 +132,22 @@ public class proyecto {
         this.repositorio = repositorio;
     }
 
-    /**
-     * getter para investigaciones
-     * @author David Huertas
-     * @since 8/11/2022
-     */
-    public ArrayList<investigacion> getInvestigaciones() {
-        return investigaciones;
+    @Override
+    public String toString() {
+        return "proyecto{" +
+                "direccion='" + direccion + '\'' +
+                ", nombre='" + nombre + '\'' +
+                ", categoria='" + categoria + '\'' +
+                ", fechaCreacion='" + fechaCreacion + '\'' +
+                ", ultimaModificacion='" + ultimaModificacion + '\'' +
+                ", repositorio='" + repositorio + '\'' +
+                '}';
     }
 
-    /**
-     * setter para investigaciones
-     * @author David Huertas
-     * @since 8/11/2022
-     */
-    public void setInvestigaciones(ArrayList<investigacion> investigaciones) {
-        this.investigaciones = investigaciones;
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof proyecto proyecto)) return false;
+        return Objects.equals(getDireccion(), proyecto.getDireccion()) && Objects.equals(getNombre(), proyecto.getNombre()) && Objects.equals(getCategoria(), proyecto.getCategoria()) && Objects.equals(getFechaCreacion(), proyecto.getFechaCreacion()) && Objects.equals(getUltimaModificacion(), proyecto.getUltimaModificacion()) && Objects.equals(getRepositorio(), proyecto.getRepositorio());
     }
-
-    /**
-     * getter para medias
-     * @author David Huertas
-     * @since 8/11/2022
-     */
-    public ArrayList<media> getMedias() {
-        return medias;
-    }
-
-    /**
-     * setter para medias
-     * @author David Huertas
-     * @since 8/11/2022
-     */
-    public void setMedias(ArrayList<media> medias) {
-        this.medias = medias;
-    }
-
 }
