@@ -9,6 +9,7 @@ public class investigacion {
     private String tema;
     private ArrayList<String> nombreAutor = new ArrayList<>();
     private String repositorio;
+    private ArrayList<String> idMedia = new ArrayList<>();
 
     /**
      * constructor para "investigacion"
@@ -30,6 +31,7 @@ public class investigacion {
         this.tema = tema;
         this.nombreAutor = nombreAutor;
         this.repositorio = repositorio;
+        ArrayList<String> idMedia = new ArrayList<>();
     }
 
     /**
@@ -140,6 +142,19 @@ public class investigacion {
         this.repositorio = repositorio;
     }
 
+    /**
+     * getter para idMedia
+     * @author David Huertas
+     */
+    public ArrayList<String> getidMedia() {
+        return idMedia;
+    }
+
+    /**
+     * setter para idMedia
+     * @author David Huertas
+     */
+    public void setidMedia(ArrayList<String> idMedia) {this.idMedia = idMedia;}
 
     @Override
     public String toString() {
@@ -150,6 +165,7 @@ public class investigacion {
                 ", tema='" + tema + '\'' +
                 ", nombreAutor=" + nombreAutor +
                 ", repositorio='" + repositorio + '\'' +
+                ", idMedia='" + idMedia + '\'' +
                 '}';
     }
 }
