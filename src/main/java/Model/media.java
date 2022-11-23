@@ -7,6 +7,7 @@ import java.util.Objects;
 public class media {
     private String fechaCreacion;
     private ArrayList<String> nombreAutor = new ArrayList<>();
+    private String direccion;
 
     /**
      * constructor para "media"
@@ -17,9 +18,10 @@ public class media {
      */
 
 
-    public media(String fechaCreacion) {
+    public media(String fechaCreacion, String direccion) {
         this.fechaCreacion = fechaCreacion;
         ArrayList<String> nombreAutor = new ArrayList<>();
+        this.direccion = direccion;
     }
 
     /**
@@ -54,18 +56,38 @@ public class media {
      */
     public void setnombreAutor(ArrayList<String> nombreAutor) {this.nombreAutor = nombreAutor;}
 
+    /**
+     * getter para direccion
+     * @author David Huertas
+     * @since 8/11/2022
+     */
+    public String getdireccion() {
+        return direccion;
+    }
+
+    /**
+     * setter para direccion
+     * @author David Huertas
+     * @since 8/11/2022
+     */
+    public void setdireccion(String direccion) {
+        this.direccion = direccion;
+    }
+
     @Override
     public String toString() {
         return "media{" +
                 "fechaCreacion='" + fechaCreacion + '\'' +
                 ", nombreAutor='" + nombreAutor + '\'' +
+                ", direccion='" + direccion + '\'' +
                 '}';
     }
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof media media)) return false;
-        return Objects.equals(getFechaCreacion(), media.getFechaCreacion()) && Objects.equals(nombreAutor, media.nombreAutor);
+        if (o == null || getClass() != o.getClass()) return false;
+        media media = (media) o;
+        return Objects.equals(fechaCreacion, media.fechaCreacion) && Objects.equals(nombreAutor, media.nombreAutor) && Objects.equals(direccion, media.direccion);
     }
 }
