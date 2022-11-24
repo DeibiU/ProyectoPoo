@@ -4,11 +4,11 @@ import java.sql.*;
 
 public class AccessData {
 
-    private static String URLconection = "jdbc:mysql://localhost:3306/bd_proyecto";
+    private static String URLconection = "jdbc:mysql://localhost:3306/proyecto01";
 
     private static String userDatabase = "root";
 
-    private static String passwordDataBase = "proyecto01";
+    private static String passwordDataBase = "Proyecto01";
 
 
 
@@ -18,7 +18,7 @@ public class AccessData {
 
             Statement statement = connection.createStatement();
 
-            ResultSet resultSet = statement.executeQuery("select * from user");
+            ResultSet resultSet = statement.executeQuery("select * from users");
 
             return resultSet;
 
@@ -62,6 +62,4 @@ public class AccessData {
             e.printStackTrace();
         }
     }
-
-
 }

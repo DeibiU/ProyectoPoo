@@ -1,6 +1,6 @@
 package Model;
 
-public class usuarioLider extends usuario{
+public class UsuarioLider extends Usuario {
     /**
      * constructor para "usuario"
      *
@@ -11,7 +11,7 @@ public class usuarioLider extends usuario{
      * @author David Huertas
      * @since 8/11/2022
      */
-    public usuarioLider(String nombreyApellido, String edad, String correo, String username) {
+    public UsuarioLider(String nombreyApellido, String edad, String correo, String username) {
         super(nombreyApellido, edad, correo, username);
     }
 }

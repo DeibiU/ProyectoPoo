@@ -1,9 +1,11 @@
 package view;
 
-import Controller.Signin;
 import javafx.application.Application;
+import javafx.application.Platform;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
@@ -12,19 +14,20 @@ import javafx.scene.image.ImageView;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
+
 import java.io.File;
 import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
 
-public class SigninController {
+
+public class SigninController implements Initializable {
 
     @FXML
     public TextField txtName;
 
     @FXML
-    public TextField txtLastname;
-
-    @FXML
-    public TextField txtUsername;
+    public TextField txtUsuario;
 
     @FXML
     public Button btnLogin;
@@ -32,8 +35,12 @@ public class SigninController {
     @FXML
     public Button btnSave;
 
+    public Button closeButton;
+
     @FXML
     public TextField txtEmail;
+
+    public TextField txtRol;
 
     @FXML
     public PasswordField txtPassword;
@@ -47,21 +54,30 @@ public class SigninController {
     @FXML
     public Label lblfoto;
 
+    public static Label registrationMessageLabel;
+
+
     private String foto = "No hay foto";
-
-
 
     /**
      * función para obtener los datos del formulario de registro y enviarlos a Register
-     */
-    public void crearUser() {
-        Signin.registrarUsuario(txtName.getText(), txtLastname.getText(), txtPassword.getText(), txtEmail.getText(),txtEdad.getText(),foto, Integer.parseInt(txtUsername.getText()));
-    }
+     *  */
 
+    public void btnSave() throws Exception {
+        String nombre = txtName.getText();
+        String apellido = txtUsuario.getText();
+        String email = txtEmail.getText();
+        String password = txtPassword.getText();
+        String rol = txtRol.getText();
+        String edad =  txtEdad.getText();
+        Controller.Signin.btnSave(nombre, apellido, email, password,rol, edad);
+    }
 
     /**
      * función para abrir el buscador de archivos para seleccionar la foto de perfil
      */
+
+
     public void buscarImagen(){
         FileChooser fileChooser = new FileChooser();
         fileChooser.setTitle("Buscar Imagen");
@@ -85,8 +101,6 @@ public class SigninController {
         }
 
     }
-
-
     /**
      * función para crear una alerta en pantalla si el nombre de usuario ya se encuentra registrado
      */
@@ -123,6 +137,10 @@ public class SigninController {
         alert.showAndWait();
     }
 
+    public static void registerButtonOnAction (ActionEvent event){
+        registrationMessageLabel.setText ("Usuario registrado");
+    }
+
 
     /**
      * función para cerrar la ventana de Signin y volver al Login con el boton
@@ -138,4 +156,21 @@ public class SigninController {
         stage.show();
     }
 
+
+
+    public void actionPerformed(ActionEvent e){
+
+        alertSuccessfullyRegistered();
+    }
+    //REVISAR SI EL INITIALIZE ES NECESARIO
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+
+    }
+
+    public void closeButtonOnAction (ActionEvent event){
+        Stage stage = (Stage) closeButton.getScene().getWindow();
+        stage.close();
+        Platform.exit();
+    }
 }

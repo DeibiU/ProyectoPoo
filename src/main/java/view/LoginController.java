@@ -1,8 +1,10 @@
 package view;
 
 
+import AccessData.DBConnection;
 import Controller.Login;
 import javafx.application.Application;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -13,6 +15,9 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.Statement;
 
 
 public class LoginController {
@@ -20,17 +25,20 @@ public class LoginController {
 
     @FXML public Button btnLogin;
 
-    @FXML public TextField Username;
+    @FXML public TextField usernameTextField;
 
-    @FXML public TextField Password;
+    @FXML public TextField passwordTextField;
+    public Button btnClickOnLogin;
 
 
-    /**
-     * función para obtener los valores ingresados en el formularion de iniciar sesion y cambiar de ventana o alertar si los datos son incorrectos
-     */
-    public void btnClickLogin() throws IOException {
-        if (Controller.Login.verificarPassword(Username.getText(),Password.getText())){
-            waitScreen();
+
+
+
+    // función para obtener los valores ingresados en el formularion de iniciar sesion y cambiar de ventana o alertar si los datos son incorrectos
+
+    public void btnClickOnLogin() throws IOException {
+        if (Login.verificarPassword(usernameTextField.getText(),passwordTextField.getText())){
+            System.out.println("Hola AL FIN");
         } else {
             alert();
         }
@@ -40,7 +48,7 @@ public class LoginController {
     /**
      * función para cambiar de ventana por la de Registro
      */
-     public void btnClickRegistro() throws IOException {
+    public void btnClickRegistro() throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Signin.fxml"));
         Parent root = fxmlLoader.load();
         SigninController controlador = fxmlLoader.getController();
@@ -103,8 +111,8 @@ public class LoginController {
         myStage.close();
 
     }
-
-
-
-
+    public void solicitarDatos (){
+        String usuario = usernameTextField.getText();
+        String password = passwordTextField.getText();
+    }
 }

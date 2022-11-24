@@ -2,7 +2,7 @@ package Model;
 
 import java.util.ArrayList;
 
-public class investigacion {
+public class Investigacion {
     private String titulo;
     private String subtitulo;
     private String categoria;
@@ -24,7 +24,7 @@ public class investigacion {
      * @since 8/11/2022
      */
 
-    public investigacion(String titulo, String subtitulos, String categoria, String tema, ArrayList nombreAutor, String repositorio) {
+    public Investigacion(String titulo, String subtitulos, String categoria, String tema, ArrayList nombreAutor, String repositorio) {
         this.titulo = titulo;
         this.subtitulo = subtitulos;
         this.categoria = categoria;

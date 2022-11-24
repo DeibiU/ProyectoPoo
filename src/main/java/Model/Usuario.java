@@ -1,6 +1,6 @@
 package Model;
 
-public class usuario {
+public class Usuario {
 
     private String nombreyApellido;
     private String edad;
@@ -21,7 +21,7 @@ public class usuario {
      * @since 25/10/2022
      */
 
-    public usuario(String nombreyApellido, String edad, String correo, String username) {
+    public Usuario(String nombreyApellido, String edad, String correo, String username) {
         this.nombreyApellido = nombreyApellido;
         this.edad = edad;
         this.correo = correo;
