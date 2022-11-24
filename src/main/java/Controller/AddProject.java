@@ -1,21 +1,19 @@
 package Controller;
 
 import AccessData.DBConnection;
-import javafx.scene.control.Button;
-import javafx.scene.control.TextField;
 
 import java.sql.Connection;
 import java.sql.Statement;
 
+public class AddProject {
 
-public class Media {
 
-    public static void addMedia(String txtDateofCreation, String address, String authorName) throws Exception{
+    public static void addProject(String user, String project, String direccion, String fecha) throws Exception {
         DBConnection connectNow = new DBConnection();
         Connection connectDB = connectNow.getConnection();
 
-        String insertValues = "INSERT INTO add_research (txtDateofCreation , address, authorName) VALUES ('";
-        String insertFields = txtDateofCreation + "','" + address + "','" + authorName +  "')";
+        String insertValues = "INSERT INTO add_project (user, project) VALUES ('";
+        String insertFields = user + "','" + project + "')";
         String insertToRegister = insertValues + insertFields;
 
         try {
@@ -24,7 +22,7 @@ public class Media {
 
             //AddProjectController.registrationMessageLabel.setText("Proyecto guardado");
 
-        } catch (Exception e) {
+        } catch (Exception e){
             e.printStackTrace();
             e.getCause();
         }

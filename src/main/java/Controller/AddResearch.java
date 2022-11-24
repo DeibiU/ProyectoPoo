@@ -1,21 +1,19 @@
 package Controller;
 
 import AccessData.DBConnection;
-import javafx.scene.control.Button;
-import javafx.scene.control.TextField;
 
 import java.sql.Connection;
 import java.sql.Statement;
 
 
-public class Investigacion {
+public class AddResearch {
 
-    public static void btnSave(String txtTitle, String txtCategory, String txtAuthorName, String txtSubtitle, String txtSubject, String txtRepository) throws Exception{
+    public static void addResearch(String titulo, String Category, String AuthorName, String Subtitle, String Repository) throws Exception{
         DBConnection connectNow = new DBConnection();
         Connection connectDB = connectNow.getConnection();
 
-        String insertValues = "INSERT INTO add_investigacion (Title , Category, AuthorName, Subtitle, Subject, Repository) VALUES ('";
-        String insertFields = txtTitle + "','" + txtCategory + "','" + txtAuthorName + "','" + txtSubtitle + "','" + txtSubject + "','" + txtRepository +  "')";
+        String insertValues = "INSERT INTO add_research (Title , Category, AuthorName, Subtitle, Repository) VALUES ('";
+        String insertFields = titulo + "','" + Category + "','" + AuthorName + "','" + Subtitle + "','" + Repository + "','" +  "')";
         String insertToRegister = insertValues + insertFields;
 
         try {

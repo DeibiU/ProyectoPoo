@@ -21,6 +21,12 @@ public class CreateProjectController {
     @FXML
     private TextField txtRepo;
 
+    public CreateProjectController() {
+        String direccion = txtDireccion.getText();
+        String nombre = txtNombre.getText();
+        String categoria = txtCategoria.getText();
+        String fecha = txtFecha.getText();
+    }
 
     public void btnSaveProject(){
 
@@ -29,8 +35,4 @@ public class CreateProjectController {
     public void btnCancelProject(){
 
     }
-
-
-
-
 }

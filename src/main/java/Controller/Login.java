@@ -33,7 +33,6 @@ public class Login {
                 if (usuario.getString("usuario").equals(usernameTextField) && usuario.getString("password").equals(passwordTextField)) {
                     userConnected = usernameTextField;
                     System.out.println(userConnected);
-                    FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Signin.fxml"));
                     return true;
                 }
             }
