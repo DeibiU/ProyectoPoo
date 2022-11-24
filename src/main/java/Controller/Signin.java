@@ -1,7 +1,7 @@
 package Controller;
 
 import AccessData.AccessData;
-import Model.usuario;
+import Model.Usuario;
 import view.SigninController;
 import java.sql.ResultSet;
 import java.util.regex.Pattern;
@@ -21,7 +21,7 @@ public class Signin {
     public static void registrarUsuario (String nombreyApellido, String username, String password, String foto, String text, String s, int i)  {
         if (!verificarUsername(username)) {
             if (verificarPassword(password)){
-                usuario nuevoUsuario= (new usuario(nombreyApellido, username, password,foto));
+                Usuario nuevoUsuario= (new Usuario(nombreyApellido, username, password,foto));
                 AccessData.insertarUsuario(nuevoUsuario.getUsername(),nuevoUsuario.getnombreyApellido(),nuevoUsuario.getPassword(),nuevoUsuario.getFoto());
                 SigninController.alertSuccessfullyRegistered();
             } else SigninController.alertPasswordInvalid();

@@ -1,10 +1,9 @@
 package Model;
 
-import javax.security.auth.login.AccountExpiredException;
 import java.util.ArrayList;
 import java.util.Objects;
 
-public class media {
+public class Media {
     private String fechaCreacion;
     private ArrayList<String> nombreAutor = new ArrayList<>();
     private String direccion;
@@ -18,7 +17,7 @@ public class media {
      */
 
 
-    public media(String fechaCreacion, String direccion) {
+    public Media(String fechaCreacion, String direccion) {
         this.fechaCreacion = fechaCreacion;
         ArrayList<String> nombreAutor = new ArrayList<>();
         this.direccion = direccion;
@@ -87,7 +86,7 @@ public class media {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        media media = (media) o;
+        Media media = (Media) o;
         return Objects.equals(fechaCreacion, media.fechaCreacion) && Objects.equals(nombreAutor, media.nombreAutor) && Objects.equals(direccion, media.direccion);
     }
 }

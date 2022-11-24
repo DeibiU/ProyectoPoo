@@ -1,9 +1,8 @@
 package Model;
 
-import java.util.ArrayList;
 import java.util.Objects;
 
-public class proyecto {
+public class Proyecto {
 
     private String direccion;
     private String nombre;
@@ -14,7 +13,7 @@ public class proyecto {
 
 
 
-    public proyecto (String direccion, String nombre, String categoria, String fechaCreacion, String ultimaModificacion, String repositorio) {
+    public Proyecto(String direccion, String nombre, String categoria, String fechaCreacion, String ultimaModificacion, String repositorio) {
 
         this.direccion = direccion;
         this.nombre = nombre;
@@ -147,7 +146,7 @@ public class proyecto {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof proyecto proyecto)) return false;
+        if (!(o instanceof Proyecto proyecto)) return false;
         return Objects.equals(getDireccion(), proyecto.getDireccion()) && Objects.equals(getNombre(), proyecto.getNombre()) && Objects.equals(getCategoria(), proyecto.getCategoria()) && Objects.equals(getFechaCreacion(), proyecto.getFechaCreacion()) && Objects.equals(getUltimaModificacion(), proyecto.getUltimaModificacion()) && Objects.equals(getRepositorio(), proyecto.getRepositorio());
     }
 }
