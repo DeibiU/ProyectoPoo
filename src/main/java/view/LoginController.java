@@ -37,9 +37,31 @@ public class LoginController {
     // función para obtener los valores ingresados en el formularion de iniciar sesion y cambiar de ventana o alertar si los datos son incorrectos
 
     public void btnClickOnLogin() throws IOException {
-        if (Login.verificarPassword(usernameTextField.getText(),passwordTextField.getText())){
-            System.out.println("Hola AL FIN");
+        if (Login.verificarPassword(usernameTextField.getText(), passwordTextField.getText())) {
+            System.out.println("AL FIN");
+            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Menu.fxml"));
+            Parent root = fxmlLoader.load();
+            MenuController controlador = fxmlLoader.getController();
+            Scene scene = new Scene(root);
+            Stage stage = new Stage();
+
+            stage.setScene(scene);
+            stage.show();
+
+            stage.setOnCloseRequest(e -> {
+                try {
+                    controlador.btnBacklogin();
+                } catch (IOException ex) {
+                    throw new RuntimeException(ex);
+                }
+            });
+
+            Stage myStage = (Stage) this.btnSignin.getScene().getWindow();
+            myStage.close();
+
+
         } else {
+            System.out.println("NO SE PUDO CARGAR");
             alert();
         }
     }
@@ -87,32 +109,33 @@ public class LoginController {
 
     /**
      * función para cambiar de ventana por la de espera
+
+
+     public void waitScreen() throws IOException {
+     FXMLLoader fxmlLoader = new FXMLLoader(Application.class.getResource("waitScreen.fxml"));
+     Parent root = fxmlLoader.load();
+     waitScreenCrontoller controlador = fxmlLoader.getController();
+     Scene scene = new Scene(root);
+     Stage stage = new Stage();
+
+     stage.setScene(scene);
+     stage.show();
+
+     stage.setOnCloseRequest(e-> {
+     try {
+     controlador.closeWindow();
+     } catch (IOException ex) {
+     throw new RuntimeException(ex);
+     }
+     });
+
+     Stage myStage = (Stage) this.btnLogin.getScene().getWindow();
+     myStage.close();
+
+     }
+     public void solicitarDatos (){
+     String usuario = usernameTextField.getText();
+     String password = passwordTextField.getText();
+     }
      */
-
-    public void waitScreen() throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(Application.class.getResource("waitScreen.fxml"));
-        Parent root = fxmlLoader.load();
-        waitScreenCrontoller controlador = fxmlLoader.getController();
-        Scene scene = new Scene(root);
-        Stage stage = new Stage();
-
-        stage.setScene(scene);
-        stage.show();
-
-        stage.setOnCloseRequest(e-> {
-            try {
-                controlador.closeWindow();
-            } catch (IOException ex) {
-                throw new RuntimeException(ex);
-            }
-        });
-
-        Stage myStage = (Stage) this.btnLogin.getScene().getWindow();
-        myStage.close();
-
-    }
-    public void solicitarDatos (){
-        String usuario = usernameTextField.getText();
-        String password = passwordTextField.getText();
-    }
 }
