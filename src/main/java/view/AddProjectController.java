@@ -18,5 +18,8 @@ public class AddProjectController {
     @FXML
     public Button Cancel;
 
+    public void btnCancelProject() {
+
+    }
 
 }

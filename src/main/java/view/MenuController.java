@@ -52,4 +52,23 @@ public class MenuController {
         stage.show();
     }
 
+        public void btnAssignProject() throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("AddProject.fxml"));
+        Parent root = fxmlLoader.load();
+        AddProjectController controlador = fxmlLoader.getController();
+        Scene scene = new Scene(root);
+        Stage stage = new Stage();
+
+        stage.setScene(scene);
+        stage.show();
+
+        stage.setOnCloseRequest(e-> {
+            controlador.btnCancelProject();
+        });
+
+        Stage myStage = (Stage) this.btnCreateProject.getScene().getWindow();
+        myStage.close();
+
+    }
+
 }
