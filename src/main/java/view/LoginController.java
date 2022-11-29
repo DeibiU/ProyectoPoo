@@ -32,8 +32,6 @@ public class LoginController {
 
 
 
-
-
     // función para obtener los valores ingresados en el formularion de iniciar sesion y cambiar de ventana o alertar si los datos son incorrectos
 
     public void btnClickOnLogin() throws IOException {

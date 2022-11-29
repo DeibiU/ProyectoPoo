@@ -32,7 +32,7 @@ public class Login {
             while (usuario.next()) {
                 if (usuario.getString("usuario").equals(usernameTextField) && usuario.getString("password").equals(passwordTextField)) {
                     userConnected = usernameTextField;
-                    System.out.println(userConnected);
+                    System.out.println("PROBANDO" + userConnected);
                     return true;
                 }
             }

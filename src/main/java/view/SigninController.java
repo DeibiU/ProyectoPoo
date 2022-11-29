@@ -59,6 +59,8 @@ public class SigninController implements Initializable {
 
     private String foto = "No hay foto";
 
+
+
     /**
      * función para obtener los datos del formulario de registro y enviarlos a Register
      *  */
