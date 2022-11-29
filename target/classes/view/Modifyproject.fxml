@@ -26,7 +26,7 @@
          </font>
       </Button>
       <TextField fx:id="txtCategoria" layoutX="59.0" layoutY="150.0" onAction="#txtAddCategoria" promptText="Password" style="-fx-background-color: transparent; -fx-border-color: #00AAE4;" text="Category" />
-      <TextField fx:id="txtRepo" layoutX="175.0" layoutY="209.0" onAction="#txtAddRepo" promptText="Password" style="-fx-background-color: transparent; -fx-border-color: #00AAE4;" text="Repository" />
+      <TextField fx:id="txtRepo" layoutX="175.0" layoutY="210.0" onAction="#txtAddRepo" promptText="Password" style="-fx-background-color: transparent; -fx-border-color: #00AAE4;" text="Repository" />
       <TextField fx:id="txtCategoria1" layoutX="281.0" layoutY="150.0" onAction="#txtAddCategoria" promptText="Password" style="-fx-background-color: transparent; -fx-border-color: #00AAE4;" text="Creation Date" />
       <Button fx:id="btnCancel1" layoutX="220.0" layoutY="315.0" mnemonicParsing="false" onAction="#btnCancelProject" prefHeight="27.0" prefWidth="60.0" style="-fx-background-color: #FF0000; -fx-border-color: black;" text="Delete" textFill="WHITE">
          <font>

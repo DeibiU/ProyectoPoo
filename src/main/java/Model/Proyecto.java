@@ -1,4 +1,7 @@
+/*
 package Model;
+
+import Controller.Signin;
 
 import java.util.Objects;
 
@@ -13,30 +16,28 @@ public class Proyecto {
 
 
 
-    public Proyecto(String direccion, String nombre, String categoria, String fechaCreacion, String ultimaModificacion, String repositorio) {
+    public Proyecto() throws Exception {
 
-        this.direccion = direccion;
-        this.nombre = nombre;
-        this.categoria = categoria;
-        this.fechaCreacion = fechaCreacion;
-        this.ultimaModificacion = ultimaModificacion;
-        this.repositorio = repositorio;
+        String direccionProyeco = direccion.getText();
+        String nombreProyecto = nombre;
+        String categoriaProyecto = categoria;
+        String fechaCreacionProyecto = fechaCreacion;
+        String ultimaModificacionProyecto = ultimaModificacion;
+        String repositorioProyecto = repositorio;
+
     }
 
-    /**
+    /*
      * getter para direccion
      * @author David Huertas
      * @since 8/11/2022
-     */
-    public String getDireccion() {
-        return direccion;
-    }
+
 
     /**
      * setter para direccion
      * @author David Huertas
      * @since 8/11/2022
-     */
+
     public void setDireccion(String direccion) {
         this.direccion = direccion;
     }
@@ -45,16 +46,13 @@ public class Proyecto {
      * getter para nombre
      * @author David Huertas
      * @since 8/11/2022
-     */
-    public String getNombre() {
-        return nombre;
-    }
+
 
     /**
      * setter para nombre
      * @author David Huertas
      * @since 8/11/2022
-     */
+
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
@@ -63,16 +61,13 @@ public class Proyecto {
      * getter para categoria
      * @author David Huertas
      * @since 8/11/2022
-     */
-    public String getCategoria() {
-        return categoria;
-    }
 
-    /**
+
+    /*
      * setter para categoria
      * @author David Huertas
      * @since 8/11/2022
-     */
+
     public void setCategoria(String categoria) {
         this.categoria = categoria;
     }
@@ -81,7 +76,7 @@ public class Proyecto {
      * getter para fechaCreacion
      * @author David Huertas
      * @since 8/11/2022
-     */
+
     public String getFechaCreacion() {
         return fechaCreacion;
     }
@@ -90,7 +85,7 @@ public class Proyecto {
      * setter para fechaCreacion
      * @author David Huertas
      * @since 8/11/2022
-     */
+
     public void setFechaCreacion(String fechaCreacion) {
         this.fechaCreacion = fechaCreacion;
     }
@@ -99,7 +94,7 @@ public class Proyecto {
      * getter para ultimaModificacion
      * @author David Huertas
      * @since 8/11/2022
-     */
+
     public String getUltimaModificacion() {
         return ultimaModificacion;
     }
@@ -108,7 +103,7 @@ public class Proyecto {
      * setter para ultimaModificacion
      * @author David Huertas
      * @since 8/11/2022
-     */
+
     public void setUltimaModificacion(String ultimaModificacion) {
         this.ultimaModificacion = ultimaModificacion;
     }
@@ -117,7 +112,7 @@ public class Proyecto {
      * getter para repositorio
      * @author David Huertas
      * @since 8/11/2022
-     */
+
     public String getRepositorio() {
         return repositorio;
     }
@@ -126,7 +121,7 @@ public class Proyecto {
      * setter para repositorio
      * @author David Huertas
      * @since 8/11/2022
-     */
+
     public void setRepositorio(String repositorio) {
         this.repositorio = repositorio;
     }
@@ -134,7 +129,7 @@ public class Proyecto {
     @Override
     public String toString() {
         return "proyecto{" +
-                "direccion='" + direccion + '\'' +
+                ", direccion='" + direccion + '\'' +
                 ", nombre='" + nombre + '\'' +
                 ", categoria='" + categoria + '\'' +
                 ", fechaCreacion='" + fechaCreacion + '\'' +
@@ -149,4 +144,6 @@ public class Proyecto {
         if (!(o instanceof Proyecto proyecto)) return false;
         return Objects.equals(getDireccion(), proyecto.getDireccion()) && Objects.equals(getNombre(), proyecto.getNombre()) && Objects.equals(getCategoria(), proyecto.getCategoria()) && Objects.equals(getFechaCreacion(), proyecto.getFechaCreacion()) && Objects.equals(getUltimaModificacion(), proyecto.getUltimaModificacion()) && Objects.equals(getRepositorio(), proyecto.getRepositorio());
     }
+
 }
+*/
