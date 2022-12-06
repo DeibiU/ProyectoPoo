@@ -167,7 +167,8 @@ public class SigninController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
     }
-
+    //ESTO CIERRA
+    //SE DEBE AGREGAR EN TODAS LAS VENTANAS QUE HAY BOTON CANCEL
     public void closeButtonOnAction (ActionEvent event){
         Stage stage = (Stage) closeButton.getScene().getWindow();
         stage.close();

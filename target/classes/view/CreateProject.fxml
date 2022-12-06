@@ -13,20 +13,25 @@
             <Font name="System Bold" size="27.0" />
          </font>
       </Label>
-      <TextField fx:id="txtDireccion" layoutX="59.0" layoutY="90.0" onAction="#txtAddDireccion" promptText="Username" style="-fx-background-color: transparet; -fx-border-color: #00AAE4;" text="Direccion" />
-      <TextField fx:id="txtNombre" layoutX="281.0" layoutY="90.0" onAction="#txtAddNombre" promptText="Password" style="-fx-background-color: transparent; -fx-border-color: #00AAE4;" text="Nombre" />
-      <Button fx:id="btnSave" layoutX="162.0" layoutY="267.0" mnemonicParsing="false" onAction="#btnSaveProject" prefHeight="27.0" prefWidth="71.0" style="-fx-background-color: #2EFE64; -fx-border-color: #00AAE4;" text="Save" textFill="#1b1b1b">
+      <TextField fx:id="txtDireccion" layoutX="59.0" layoutY="90.0" promptText="Username" style="-fx-background-color: transparet; -fx-border-color: #00AAE4;" text="Direccion" />
+      <TextField fx:id="txtNombre" layoutX="281.0" layoutY="90.0" promptText="Password" style="-fx-background-color: transparent; -fx-border-color: #00AAE4;" text="Nombre" />
+      <Button fx:id="btnSave" layoutX="139.0" layoutY="331.0" mnemonicParsing="false" onAction="#btnSaveProject" prefHeight="27.0" prefWidth="71.0" style="-fx-background-color: #2EFE64; -fx-border-color: #00AAE4;" text="Save" textFill="#1b1b1b">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Button>
-      <Button fx:id="btnCancel" layoutX="260.0" layoutY="267.0" mnemonicParsing="false" onAction="#btnCancelProject" prefHeight="27.0" prefWidth="71.0" style="-fx-background-color: #B40431; -fx-border-color: #00AAE4;" text="Cancel" textFill="WHITE">
+      <Button fx:id="btnCancel" layoutX="290.0" layoutY="331.0" mnemonicParsing="false" onAction="#btnCancelOnAction" prefHeight="27.0" prefWidth="71.0" style="-fx-background-color: #B40431; -fx-border-color: #00AAE4;" text="Cancel" textFill="WHITE">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Button>
-      <TextField fx:id="txtCategoria" layoutX="59.0" layoutY="150.0" onAction="#txtAddCategoria" promptText="Password" style="-fx-background-color: transparent; -fx-border-color: #00AAE4;" text="Categoria" />
-      <TextField fx:id="txtFecha" layoutX="281.0" layoutY="150.0" onAction="#txtAddFecha" promptText="Password" style="-fx-background-color: transparent; -fx-border-color: #00AAE4;" text="Fecha de Creacion" />
-      <TextField fx:id="txtRepo" layoutX="175.0" layoutY="209.0" onAction="#txtAddRepo" promptText="Password" style="-fx-background-color: transparent; -fx-border-color: #00AAE4;" text="Repositorio" />
+      <TextField fx:id="txtCategoria" layoutX="59.0" layoutY="150.0" promptText="Password" style="-fx-background-color: transparent; -fx-border-color: #00AAE4;" text="Categoria" />
+      <TextField fx:id="txtFecha" layoutX="281.0" layoutY="150.0" promptText="Password" style="-fx-background-color: transparent; -fx-border-color: #00AAE4;" text="Fecha de Creacion" />
+      <TextField fx:id="txtRepo" layoutX="175.0" layoutY="209.0" promptText="Password" style="-fx-background-color: transparent; -fx-border-color: #00AAE4;" text="Repositorio" />
+      <Button fx:id="btnAddMedia" layoutX="189.0" layoutY="276.0" mnemonicParsing="false" onAction="#btnAddMedia" prefHeight="27.0" prefWidth="122.0" style="-fx-background-color: #2EFE64; -fx-border-color: #00AAE4;" text="Agregar media" textFill="#1b1b1b">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>

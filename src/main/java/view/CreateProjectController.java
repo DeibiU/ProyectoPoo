@@ -1,11 +1,21 @@
 package view;
 
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 
-public class CreateProjectController {
+import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
+
+public class CreateProjectController implements Initializable {
 
     @FXML
     private TextField txtDireccion;
@@ -15,6 +25,8 @@ public class CreateProjectController {
     private Button btnSave;
     @FXML
     private Button btnCancel;
+    @FXML
+    private Button btnAddMedia;
     @FXML
     private TextField txtCategoria;
     @FXML
@@ -31,27 +43,49 @@ public class CreateProjectController {
     */
 
 
-    public void btnSaveProject(){
+    public void btnCancelProject() {
 
     }
 
-    public void btnCancelProject(){
-
+    public void btnSaveProject() throws Exception {
+        String direccion = txtDireccion.getText();
+        String nombre = txtNombre.getText();
+        String categoria = txtCategoria.getText();
+        String fecha = txtFecha.getText();
+        String repo = txtRepo.getText();
+        System.out.println("PROBANDO BOTON ADDP");
+        Controller.CreateProject.btnSaveProject(nombre, categoria, direccion, fecha);
     }
 
 
-    public void txtAddDireccion(ActionEvent event) {
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+
     }
 
-    public void txtAddNombre(ActionEvent event) {
-    }
+    public void btnAddMedia(ActionEvent event) throws IOException  {
+            System.out.println("Probando boton add media");
+            FXMLLoader fxmlLoader = new FXMLLoader(Ejecutador.class.getResource("AddMedia.fxml"));
+            Parent root = fxmlLoader.load();
+            AddMediaController controlador = fxmlLoader.getController();
+            Scene scene = new Scene(root);
+            Stage stage = new Stage();
 
-    public void txtAddCategoria(ActionEvent event) {
-    }
+            stage.setScene(scene);
+            stage.show();
 
-    public void txtAddFecha(ActionEvent event) {
-    }
+            stage.setOnCloseRequest(e -> {
+                controlador.btnCancelProject(event);
+            });
 
-    public void txtAddRepo(ActionEvent event) {
+            Stage myStage = (Stage) this.btnAddMedia.getScene().getWindow();
+            myStage.close();
+
+        }
+
+    public void btnCancelOnAction(ActionEvent event) {
+        Stage stage = (Stage) btnCancel.getScene().getWindow();
+        stage.close();
+        Platform.exit();
     }
 }

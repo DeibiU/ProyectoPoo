@@ -8,9 +8,10 @@ import java.sql.Statement;
 public class AddProject {
 
 
-    public static void addProject(String user, String project, String direccion, String fecha) throws Exception {
+    public static void AddProjectOnClick(String user, String project) throws Exception {
         DBConnection connectNow = new DBConnection();
         Connection connectDB = connectNow.getConnection();
+        System.out.println("PROBANDO BOTON AddProject");
 
         String insertValues = "INSERT INTO add_project (user, project) VALUES ('";
         String insertFields = user + "','" + project + "')";
@@ -22,7 +23,7 @@ public class AddProject {
 
             //AddProjectController.registrationMessageLabel.setText("Proyecto guardado");
 
-        } catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
             e.getCause();
         }

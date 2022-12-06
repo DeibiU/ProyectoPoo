@@ -1,8 +1,11 @@
 package view;
 
+import javafx.application.Platform;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 
 public class AddResearchController {
 
@@ -32,4 +35,10 @@ public class AddResearchController {
 
     @FXML
     public Button btnAddMedia;
+
+    public void btnCancelOnAction (ActionEvent event){
+        Stage stage = (Stage) btnCancel.getScene().getWindow();
+        stage.close();
+        Platform.exit();
+    }
 }

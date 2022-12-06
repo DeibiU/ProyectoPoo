@@ -15,13 +15,13 @@
          </font>
       </Label>
       <TextField fx:id="txtName" layoutX="59.0" layoutY="240.0" style="-fx-background-color: transparet; -fx-border-color: #00AAE4;" />
-      <TextField fx:id="txtLastname" layoutX="285.0" layoutY="240.0" style="-fx-background-color: transparent; -fx-border-color: #00AAE4;" />
-      <Button fx:id="btnLogin" layoutX="170.0" layoutY="466.0" mnemonicParsing="false" onAction="#btnBacklogin" prefHeight="27.0" prefWidth="71.0" style="-fx-background-color: transparent; -fx-border-color: #00AAE4;" text="Login" textFill="#1b1b1b">
+      <TextField fx:id="txtUsuario" layoutX="285.0" layoutY="240.0" style="-fx-background-color: transparent; -fx-border-color: #00AAE4;" />
+      <Button fx:id="btnLogin" layoutX="127.0" layoutY="466.0" mnemonicParsing="false" onAction="#btnBacklogin" prefHeight="27.0" prefWidth="71.0" style="-fx-background-color: transparent; -fx-border-color: #00AAE4;" text="Login" textFill="#1b1b1b">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Button>
-      <Button fx:id="btnSave" layoutX="266.0" layoutY="466.0" mnemonicParsing="false" onAction="#crearUser" prefHeight="27.0" prefWidth="71.0" style="-fx-background-color: green;" text="Save" textFill="WHITE">
+      <Button fx:id="btnSave" layoutX="214.0" layoutY="466.0" mnemonicParsing="false" onAction="#btnSave" prefHeight="27.0" prefWidth="71.0" style="-fx-background-color: green;" text="Save" textFill="WHITE">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
@@ -30,7 +30,7 @@
          <font>
             <Font name="System Bold" size="12.0" />
          </font></Label>
-      <Label layoutX="335.0" layoutY="134.0" />
+      <Label layoutX="339.0" layoutY="95.0" />
       <Label layoutX="332.0" layoutY="213.0" text="Username">
          <font>
             <Font name="System Bold" size="12.0" />
@@ -50,24 +50,29 @@
             <Font name="System Bold" size="12.0" />
          </font></Label>
       <TextField fx:id="txtEdad" layoutX="285.0" layoutY="410.0" style="-fx-background-color: transparet; -fx-border-color: #00AAE4;" />
-      <Label layoutX="235.0" layoutY="95.0" text="Imagen">
+      <Label layoutX="233.0" layoutY="66.0" text="Imagen">
          <font>
             <Font name="System Bold" size="12.0" />
          </font></Label>
-      <Button fx:id="btnUpload" layoutX="207.0" layoutY="123.0" mnemonicParsing="false" onAction="#buscarImagen" prefHeight="62.0" prefWidth="95.0" style="-fx-background-color: #5F1023;" text="Upload Files " textAlignment="CENTER" textFill="WHITE">
+      <Button fx:id="btnUpload" layoutX="211.0" layoutY="84.0" mnemonicParsing="false" onAction="#buscarImagen" prefHeight="62.0" prefWidth="95.0" style="-fx-background-color: #5F1023;" text="Upload Files " textAlignment="CENTER" textFill="WHITE">
          <font>
             <Font name="System Bold" size="12.0" />
          </font></Button>
-      <Label layoutX="230.0" layoutY="134.0" prefHeight="17.0" prefWidth="56.0" text="^^^^^^" textFill="WHITE">
+      <Label layoutX="231.0" layoutY="128.0" prefHeight="17.0" prefWidth="56.0" text="^^^^^^" textFill="WHITE">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
-      <PasswordField fx:id="txtPassword1" layoutX="61.0" layoutY="410.0" style="-fx-border-color: #00AAE4; -fx-background-color: transparent;" />
       <Label layoutX="127.0" layoutY="383.0" text="Rol">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
+      <TextField fx:id="txtRol" layoutX="61.0" layoutY="410.0" style="-fx-background-color: transparet; -fx-border-color: #00AAE4;" />
+      <Button fx:id="closeButton" layoutX="303.0" layoutY="466.0" mnemonicParsing="false" onAction="#closeButtonOnAction" prefHeight="27.0" prefWidth="71.0" style="-fx-background-color: transparent; -fx-border-color: #00AAE4;" text="Close" textFill="#1b1b1b">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>

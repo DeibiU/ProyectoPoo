@@ -2,13 +2,7 @@ package Controller;
 
 import AccessData.AccessData;
 import AccessData.DBConnection;
-import Model.Usuario;
 import view.SigninController;
-import javafx.scene.control.Button;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.TextField;
-import view.SigninController;
-
 
 import java.sql.Connection;
 import java.sql.ResultSet;
