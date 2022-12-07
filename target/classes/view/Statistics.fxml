@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="310.0" prefWidth="454.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.StatiticsController">
+   <children>
+      <Label layoutX="168.0" layoutY="18.0" prefHeight="47.0" prefWidth="117.0" text="Statistics" textAlignment="RIGHT" textFill="#00aae4">
+         <font>
+            <Font name="System Bold" size="27.0" />
+         </font>
+      </Label>
+      <Button fx:id="btnExit" layoutX="404.0" layoutY="270.0" mnemonicParsing="false" onAction="#btnExit" prefHeight="5.0" prefWidth="40.0" style="-fx-background-color: #A40320;" text="Exit" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
+      <Button fx:id="btnSeeStats" layoutX="160.0" layoutY="170.0" mnemonicParsing="false" onAction="#btnLoadStats" prefHeight="27.0" prefWidth="113.0" style="-fx-background-color: transparent; -fx-border-color: #00AAE4;" text="Load Stats" textFill="#1b1b1b">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
+      <ListView fx:id="List1" layoutX="30.0" layoutY="95.0" prefHeight="47.0" prefWidth="187.0" />
+      <Text layoutX="30.0" layoutY="89.0" strokeType="OUTSIDE" strokeWidth="0.0" text="User who made more research" textAlignment="CENTER" wrappingWidth="187.33333333333326">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Text>
+      <ListView fx:id="List2" layoutX="217.0" layoutY="95.0" prefHeight="47.0" prefWidth="187.0" />
+      <Text layoutX="217.0" layoutY="90.0" strokeType="OUTSIDE" strokeWidth="0.0" text="User with more media added" textAlignment="CENTER" wrappingWidth="187.33333333333326">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Text>
+   </children>
+</AnchorPane>
