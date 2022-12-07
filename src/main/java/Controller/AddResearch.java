@@ -8,12 +8,17 @@ import java.sql.Statement;
 
 public class AddResearch {
 
-    public static void addResearch(String titulo, String Category, String AuthorName, String Subtitle, String Repository) throws Exception{
+
+
+
+
+    public static void addResearch(String titulo, String Category, String AuthorName, String Subtitle, String Repository) throws Exception {
         DBConnection connectNow = new DBConnection();
         Connection connectDB = connectNow.getConnection();
 
+
         String insertValues = "INSERT INTO add_research (Title , Category, AuthorName, Subtitle, Repository) VALUES ('";
-        String insertFields = titulo + "','" + Category + "','" + AuthorName + "','" + Subtitle + "','" + Repository + "','" +  "')";
+        String insertFields = titulo + "','" + Category + "','" + AuthorName + "','" + Subtitle + "','" + Repository + "','" + "')";
         String insertToRegister = insertValues + insertFields;
 
         try {
@@ -26,5 +31,6 @@ public class AddResearch {
             e.printStackTrace();
             e.getCause();
         }
+
+        }
     }
-}

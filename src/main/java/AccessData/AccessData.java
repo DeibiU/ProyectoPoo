@@ -30,39 +30,53 @@ public class AccessData {
         return null;
     }
 
-    public static void insertarUsuario(String username,String nombreyapellido, String password, String foto){
+    public static ResultSet getAllProjects(){
         try {
             Connection connection = DriverManager.getConnection(URLconection,userDatabase,passwordDataBase);
 
-            PreparedStatement ps = connection.prepareStatement("INSERT INTO usuario ( Username,Nombreyapellido,Password,Foto) VALUES (?,?,?,?)");
-            ps.setString(1,username);
-            ps.setString(2,nombreyapellido);
-            ps.setString(3,password);
-            ps.setString(4,foto);
+            Statement statement = connection.createStatement();
 
-            ps.executeUpdate();
+            ResultSet resultSet = statement.executeQuery("select * from create_project");
+
+            return resultSet;
 
         } catch (Exception e){
             e.printStackTrace();
         }
+
+        return null;
     }
-    public static void insertarProyecto(String direccion,String nombre, String categoria, String fechaCreacion, String repositorio){
+
+    public static ResultSet getAllUsersFromProjects(){
         try {
-            Connection connection = DriverManager.getConnection(URLconection,userDatabase,passwordDataBase);
+            Connection connection = DriverManager.getConnection(URLconection, userDatabase,passwordDataBase);
 
-            PreparedStatement ps = connection.prepareStatement("INSERT INTO usuario ( Direccion,Nombre,Categoria,Cecha_Creacion,Repositorio) VALUES (?,?,?,?,?)");
-            ps.setString(1,direccion);
-            ps.setString(2,nombre);
-            ps.setString(3,categoria);
-            ps.setString(4,fechaCreacion);
-            ps.setString(5,repositorio);
+            Statement statement = connection.createStatement();
 
-            ps.executeUpdate();
+            ResultSet resultSet = statement.executeQuery("select user from proyecto01.add_project");
 
-        } catch (Exception e){
+            return resultSet;
+
+        } catch (Exception e) {
             e.printStackTrace();
         }
+        return null;
     }
 
+    public static ResultSet getAllUsersFromMedia(){
+        try {
+            Connection connection = DriverManager.getConnection(URLconection, userDatabase,passwordDataBase);
+
+            Statement statement = connection.createStatement();
+
+            ResultSet resultSet = statement.executeQuery("select authorName from proyecto01.create_media");
+
+            return resultSet;
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
 
 }

@@ -1,16 +1,7 @@
 package Controller;
 
-import AccessData.*;
-import javafx.event.ActionEvent;
-import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.scene.control.Label;
-import javafx.stage.Stage;
-import view.HelloApplication;
-import view.LoginController;
-import view.SigninController;
+import AccessData.AccessData;
+import AccessData.DBConnection;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -32,7 +23,7 @@ public class Login {
             while (usuario.next()) {
                 if (usuario.getString("usuario").equals(usernameTextField) && usuario.getString("password").equals(passwordTextField)) {
                     userConnected = usernameTextField;
-                    System.out.println(userConnected);
+                    System.out.println("PROBANDO" + userConnected);
                     return true;
                 }
             }

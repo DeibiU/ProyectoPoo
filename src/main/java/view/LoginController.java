@@ -1,10 +1,7 @@
 package view;
 
 
-import AccessData.DBConnection;
 import Controller.Login;
-import javafx.application.Application;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -15,9 +12,6 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.Statement;
 
 
 public class LoginController {
@@ -39,7 +33,7 @@ public class LoginController {
     public void btnClickOnLogin() throws IOException {
         if (Login.verificarPassword(usernameTextField.getText(), passwordTextField.getText())) {
             System.out.println("AL FIN");
-            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Menu.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(Ejecutador.class.getResource("Menu.fxml"));
             Parent root = fxmlLoader.load();
             MenuController controlador = fxmlLoader.getController();
             Scene scene = new Scene(root);
@@ -49,11 +43,7 @@ public class LoginController {
             stage.show();
 
             stage.setOnCloseRequest(e -> {
-                try {
-                    controlador.btnBacklogin();
-                } catch (IOException ex) {
-                    throw new RuntimeException(ex);
-                }
+                controlador.btnBacklogin();
             });
 
             Stage myStage = (Stage) this.btnSignin.getScene().getWindow();
@@ -71,7 +61,7 @@ public class LoginController {
      * función para cambiar de ventana por la de Registro
      */
     public void btnClickRegistro() throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Signin.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(Ejecutador.class.getResource("Signin.fxml"));
         Parent root = fxmlLoader.load();
         SigninController controlador = fxmlLoader.getController();
         Scene scene = new Scene(root);
@@ -104,6 +94,9 @@ public class LoginController {
         alert.setTitle("No se pudo iniciar sesión");
         alert.setContentText("Los datos ingresados no coinciden");
         alert.showAndWait();
+    }
+
+    public void btnCancelProject() {
     }
 
 
